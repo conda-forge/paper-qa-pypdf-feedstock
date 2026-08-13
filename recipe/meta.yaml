@@ -1,5 +1,5 @@
 {% set name = "paper-qa-pypdf" %}
-{% set version = "2026.3.18" %}
+{% set version = "2026.8.12" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/paper_qa_pypdf-{{ version }}.tar.gz
-  sha256: 0c112cd3b92be7a1d3012ccbc768e7e5ea77fc788d17c17ea8e8ea35580b8d98
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/paper_qa_pypdf-{{ version }}.tar.gz
+  sha256: e5523da1f242b60bc2f666ac1d8ec260e2b5657665b32b91a0a30f6839f1d84f
 
 build:
   noarch: python
