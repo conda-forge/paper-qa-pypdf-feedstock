@@ -13,10 +13,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=26259&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/paper-qa-pypdf-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/paper-qa-pypdf-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/paper-qa-pypdf-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -39,31 +40,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `paper-qa-pypdf` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install paper-qa-pypdf
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install paper-qa-pypdf
 ```
 
-It is possible to list all of the versions of `paper-qa-pypdf` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add paper-qa-pypdf
+# for installing globally
+pixi global install paper-qa-pypdf
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `paper-qa-pypdf` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search paper-qa-pypdf --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search paper-qa-pypdf --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search paper-qa-pypdf --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -75,6 +118,8 @@ mamba repoquery whoneeds paper-qa-pypdf --channel conda-forge
 # List dependencies of `paper-qa-pypdf`:
 mamba repoquery depends paper-qa-pypdf --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
