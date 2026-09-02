@@ -1,0 +1,47 @@
+schema_version: 1
+
+context:
+  name: paper-qa-pypdf
+  version: "2026.8.12"
+  python_min: "3.11"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/paper_qa_pypdf-${{ version }}.tar.gz
+  sha256: e5523da1f242b60bc2f666ac1d8ec260e2b5657665b32b91a0a30f6839f1d84f
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python 3.11.*
+    - setuptools >=64
+    - setuptools-scm >=8
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - pypdf >=3
+    - paper-qa
+
+tests:
+  - python:
+      imports:
+        - paperqa_pypdf
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: PaperQA readers implemented using PyPDF
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/Future-House/paper-qa
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
